@@ -39,9 +39,9 @@ gobuster dir -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-med
 ```
 
 ### Here we found that the webserver runs wordpress on "/wordpress", and we found another directory named "/secret.txt", and in the secret direcctory we found this on the directory.
-```
-01.png
-```
+
+[01.png](https://github.com/sigwotts/vulnhub/blob/main/Prime_Series_Level-1/01.png)
+
 ### And here we found a link to a tool called wfuzz i.e
 ```
 https://github.com/hacknpentest/Fuzzing/blob/master/Fuzz_For_Web
