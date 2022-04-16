@@ -40,15 +40,14 @@ gobuster dir -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-med
 
 ### Here we found that the webserver runs wordpress on "/wordpress", and we found another directory named "/secret.txt", and in the secret direcctory we found this on the directory.
 
-[01.png](https://github.com/sigwotts/vulnhub/blob/main/Prime_Series_Level-1/01.png)
+![01.png](https://github.com/sigwotts/vulnhub/blob/main/Prime_Series_Level-1/01.png)
 
 ### And here we found a link to a tool called wfuzz i.e
 ```
 https://github.com/hacknpentest/Fuzzing/blob/master/Fuzz_For_Web
 ```
-```
-02.png
-```
+
+![02.png](https://github.com/sigwotts/vulnhub/blob/main/Prime_Series_Level-1/02.png)
 
 ### And there we found we can use the "file" parameter on "index.php" page and see the location.txt as we can see on the "/secret" directory, and finally we made a url using the file parameter.
 ```
@@ -56,21 +55,19 @@ http://192.168.1.86/index.php?file=location.txt
 ```
 ### There we found...
 
-```
-03.png
-```
+![03.png](https://github.com/sigwotts/vulnhub/blob/main/Prime_Series_Level-1/03.png)
+
 ### And here we found we have to use the parameter "secrettier360", and after updating the url we finally made the url 
 ```
 http://192.168.1.85/image.php?secrettier360=../../../etc/passwd
 ```
-```
-04.png
-```
+
+![04.png](https://github.com/sigwotts/vulnhub/blob/main/Prime_Series_Level-1/04.png)
+
 ### And there we got a LFI and from the /etc/passwd file we get to know that there are 2 users '"victor" & "saket" and when we started the vm we found a line i.e "find password.txt file my directory", which means password.txt file is in users directory. 
 
-```
-05.png
-```
+![05.png](https://github.com/sigwotts/vulnhub/blob/main/Prime_Series_Level-1/05.png)
+
 ### So we tried on "/home/victor/password.txt" on the url, but it didn't worked, so i tried on the other user and i got the password i.e
 ```
 http://192.168.1.85/image.php?secrettier360=../../../home/saket/password.txt
@@ -87,9 +84,7 @@ victor:follow_the_ippsec
 ## It,s time to gain the initial foothold i.e gaining a shell on the box
 
 ### So we navigate to the theme editor there we find that we cannot the files because it is not editable by the server side, then after enumerating on the twenty nineteen theme we got a file which is writeable i.e "secret.php"
-```
-06.png
-```
+![06.png](https://github.com/sigwotts/vulnhub/blob/main/Prime_Series_Level-1/06.png)
 
 ### There i uploaded my php reverse shell to get the shell on the box
 ### After pasting the shell script on the secret.php file, i opened my netcat listner and i curl the secret.php file(we can find the url by using google) 
