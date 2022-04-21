@@ -137,7 +137,7 @@ $ cat todo.txt
 ```
 
 ### From todo.txt we found an interesting directory "/h3l105", So we tried and here we got wordpress website
-![wordpress-site](url)
+![wordpress-site](https://github.com/sigwotts/vulnhub/blob/main/symfonos/wordpress-site.png)
 
 ### Then, we tried to enumerate the website using wp-scan
 ```
@@ -260,7 +260,7 @@ Interesting Finding(s):
 ```
 
 ### Here we find 2 plugins mail-masta & site-editor, I tried searchsploit to find any vulnerabily in the mail-masta plugin and i found this version is vulnerable to LFI
-![searchsploit](url)
+![searchsploit](https://github.com/sigwotts/vulnhub/blob/main/symfonos/searchsploit.png)
 
 ### So we can see in the expoit!
 ```
@@ -300,7 +300,7 @@ http://server/wp-content/plugins/mail-masta/inc/campaign/count_of_send.php?pl=/e
 ```
 http://symfonos.local/h3l105/wp-content/plugins/mail-masta/inc/campaign/count_of_send.php?pl=/etc/passwd
 ```
-![LFI](url)
+![LFI](https://github.com/sigwotts/vulnhub/blob/main/symfonos/LFI.png)
 
 ## Time to get the inital foothold to the machine
 
